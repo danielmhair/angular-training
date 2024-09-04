@@ -28,8 +28,8 @@ Third, Grab the template tag and tell the browser to show the template by callin
 <script>
 function showContent() {
   let temp = document.getElementsByTagName("template")[0];
-  let clon = temp.content.cloneNode(true);
-  document.body.appendChild(clon);
+  let clone = temp.content.cloneNode(true);
+  document.body.appendChild(clone);
 }
 </script>
 ```

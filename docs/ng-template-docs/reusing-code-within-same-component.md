@@ -109,4 +109,4 @@ So the full code would look like this in our initial example (with a for loop)
 }
 ```
 
-Is this not enough? There is so much more to structural directives and passing context into the ngTemplateContext. See `Structural Directives (TODO)`.
+Is this not enough? There is so much more to structural directives and passing context into the ngTemplateContext. See [Structural Directives](../structural-directives.md)`.

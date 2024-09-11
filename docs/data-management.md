@@ -3,7 +3,7 @@
 If you notice, there is always a pattern when working with data in the UI.
 
 1. Go to the server to get some list of data
-1. Transform that list of data or get more data from the data, based on the first list
+1. Either keep the data from the service, transform it, or get more information based on the retrieved, based on the first list
 1. Display that data in a grid, list, table or panels
 
 Whether or not you use a grid, list, table or panels, it is always the same way you get the data.

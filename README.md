@@ -1,6 +1,8 @@
 # Angular Training
 
-The purpose of this training is to help anyone understand Angular in-depth so you can really use its power effectively and more efficiently.
+The purpose of this repo is to help anyone understand Angular in-depth so you can really use its power effectively and more efficiently.
+
+This repo also has angular libraries that are exported into the @devcreate/* library (currently under development).
 
 If you want to utilize Angular at its fullest, first understand the basics, then the advanced basics.
 

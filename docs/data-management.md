@@ -10,6 +10,53 @@ Before building this DataSource, we need to understand the use cases for it.
 1. We want to display this with Angular Material, their CDK Infinite Scroller or any ngFor loop so that our retrieval of data is ALWAYS consistent
 1. Instead of reinventing the wheel for every table, list or grid, lets create a reusable class that you extend whenever you need to go to the server.
 
+# Usage
+
+Imagine you want to display data from your API using an Angular Material table.
+After understanding this document, you will be able to do it with a few simple steps:
+
+1. Get your data from a relative path
+   
+```typescript
+
+@Injectable()
+export class ResourcesDataSource extends BaseApiDataSource<Resource> {
+  public relativePath: string = '/api/resources'
+  public allowLocalFilter = true
+
+  constructor(http: HttpClient, userService: UserService) {
+    super(http, userService);
+    this.params.type = 'random'
+  }
+}
+```
+
+1. Inject your DataSource service into your component
+
+```typescript
+@Component({
+  providers: [ResourcesDataSource],
+})
+export class ResourcesPageComponent implements OnInit {
+    constructor(private dataSource: ResourcesDataSource) {}
+}
+```
+
+1. Display your data in the table
+
+```html
+<table mat-table [dataSource]="dataSource">
+  <ng-container matColumnDef="weight">
+    <th mat-header-cell *matHeaderCellDef> Weight </th>
+    <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="['weight']"></tr>
+  <tr mat-row *matRowDef="let row; columns: ['weight'];"></tr>
+</table>
+```
+
+
+# Implementing it
 
 Before continuing, it is important to remember to not overcomplicate a solution. There are 3 ways to implement what you need if you just need an array that is used, or want local searching, paging or sorting:
 - [Just use an observable or a promise](#dont-overcomplicate-solutions-if-needed).

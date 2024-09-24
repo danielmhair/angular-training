@@ -1,14 +1,15 @@
 # Better data management in Angular
 
-If you notice, there is always a pattern when working with data in the UI.
+When working with data in Angular, the purpose for that data ends up showing in a list of some kind. You then display that data in either a table, list, grid or some other component. This document shows how you can easily implement a data source to manage your data. Its purpose is to work off of the ideas that Angular Material shows through its `MatTableDataSource` class, but takes it a step further.
 
-1. Go to the server to get some list of data
-1. Use that data to list some items, or transform it to get more information and then display the data
-1. The data is usually displayed in a grid, list, table or panels
+Before building this DataSource, we need to understand the use cases for it.
 
-Whether or not you use a grid, list, table or panels, it is always the same way you get the data.
+1. We need to get the data from an API
+1. Sometimes after we get that data, we may need to get more data from the server, or transform it
+1. The data is usually displayed in a grid, list, table or panels, so we want a consistent workflow for all these types of components
+1. We want to display this with Angular Material, their CDK Infinite Scroller or any ngFor loop so that our retrieval of data is ALWAYS consistent
+1. Instead of reinventing the wheel for every table, list or grid, lets create a reusable class that you extend whenever you need to go to the server.
 
-Instead of reinventing the wheel for every table, list or grid, lets create a reusable service that you extend whenever you need to go to the server.
 
 Before continuing, it is important to remember to not overcomplicate a solution. There are 3 ways to implement what you need if you just need an array that is used, or want local searching, paging or sorting:
 - [Just use an observable or a promise](#dont-overcomplicate-solutions-if-needed).

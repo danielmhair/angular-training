@@ -305,7 +305,7 @@ TODO
 
 This is the end solution: [base.data-source.ts](../app/projects/data-sources/src/lib/base.data-source.ts)
 
-This is a library that can be used with @dmh/data-sources. It is a library that can be used to manage data in a
+This is a library that can be used with @devcrate/data-sources. It is a library that can be used to manage data in a
 table-like structure. See [Using these data sources in your application](#using-these-data-sources-in-your-application).
 
 ## BaseApiDataSource
@@ -425,19 +425,19 @@ Since we extend the `BaseDataSource`, it's really simple to make an Api version 
 
 This is the end solution: [api-base.data-source.ts](../app/projects/data-sources/src/lib/api-base.data-source.ts)
 
-This is a library that can be used with @dmh/data-sources. It is a library that can be used to manage data in a
+This is a library that can be used with @devcrate/data-sources. It is a library that can be used to manage data in a
 table-like structure. See [Using these data sources in your application](#using-these-data-sources-in-your-application).
 
 ## Using these data sources in your application
 
 ```bash
-npm i @dmh/data-sources
+npm i @devcrate/data-sources
 ```
 
 Create your DataSource:
 
 ```typescript
-import {BaseDataSource} from '@dmh/data-sources'
+import {BaseDataSource} from '@devcrate/data-sources'
 
 export class MyDataSource extends BaseApiDataSource<MyData> {
     public relativePath = '/api/my-data'

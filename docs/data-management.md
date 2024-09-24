@@ -32,7 +32,7 @@ For better understanding of the DataSource, feel free to go through this [Angula
 In our case, we will have 3 different `DataSource` classes:
 
 - `BaseDataSource` - `MatTableDataSource` is really nice and most of the BaseDataSource functionality comes from this data source. **However**, the data source is meant to be easily overridable for all your table needs. Sadly, MatTableDataSource is basic.
-- `BaseApiDataSource` - This will handle all your sorting, paging, filtering and searching needs. It extends `BaseDataSource`
+- `BaseApiDataSource` - This will handle all your API calls, and will add sorting, paging, filtering and searching to the API call. It extends `BaseDataSource`. This requires a consistent way of paging, searching, sorting and filtering.
 - `BaseApiInfiniteScrollDataSource` - This allows you to use the `*cdkVirtualFor` and `cdk-virtual-scroll-viewport` for infinite scrolling
 
 ## BaseDataSource

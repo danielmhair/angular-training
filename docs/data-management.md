@@ -57,6 +57,11 @@ export abstract class BaseApiDataSource implements DataSource {
 }
 ```
 
+The `connect` method is called when mat-table is initialized. It expects an observable to be returned. In our case, we
+return the `data$` as an observable.
+
+When we `disconnect`, we complete the `data$` observable. This is important to prevent memory leaks.
+
 ### `data$` class member
 For our data source, we need a way to manage the data. We will use a [BehaviorSubject](https://www.learnrxjs.io/learn-rxjs/subjects/behaviorsubject)
 to manage the data for multiple reasons:
@@ -69,11 +74,6 @@ Why use `BehaviorSubject` instead of an `Observable`. `Observable objects cannot
 
 For all observable-like values, we add `$` to the end of the variable name. So we have added the `data$` variable to
 manage our array of data.
-
-The `connect` method is called when mat-table is initialized. It expects an observable to be returned. In our case, we
-return the `data$` as an observable.
-
-When we `disconnect`, we complete the `data$` observable. This is important to prevent memory leaks.
 
 ### Ensure typing with generics
 

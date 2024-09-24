@@ -46,12 +46,7 @@ export class ResourcesPageComponent implements OnInit {
 
 ```html
 <table mat-table [dataSource]="dataSource">
-  <ng-container matColumnDef="weight">
-    <th mat-header-cell *matHeaderCellDef> Weight </th>
-    <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-  </ng-container>
-  <tr mat-header-row *matHeaderRowDef="['weight']"></tr>
-  <tr mat-row *matRowDef="let row; columns: ['weight'];"></tr>
+  ...
 </table>
 ```
 
